@@ -1,5 +1,4 @@
 let canvas;
-<<<<<<< HEAD
 let world;
 let keyboard = new Keyboard();
 
@@ -56,16 +55,3 @@ window.addEventListener("keyup", (e) => {
 
  
 });
-=======
-let world;  
-
-
-function init(){
-    
-    canvas = document.getElementById('canvas');
-    world = new World(canvas);
-
-    console.log('My character is', world.character);
-    
-}
->>>>>>> 9a7f1514f3956b203ebc5af175cbc72d2b4d3b19
