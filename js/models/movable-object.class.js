@@ -19,17 +19,7 @@ class MovableObject extends DrawableObject {
   isAboveGround() {
     return this.y < 151;
   }
-
-  drawFrame(ctx) {
-    if (this instanceof Character || this instanceof Chicken) {
-      ctx.beginPath();
-      ctx.lineWidth = "5";
-      ctx.strokeStyle = "blue";
-      ctx.rect(this.x, this.y, this.width, this.height);
-      ctx.stroke();
-    }
-  }
-
+  
   // character.isColliding(chicken);
   isColliding(mo) {
     return (
@@ -59,7 +49,7 @@ class MovableObject extends DrawableObject {
   isDead() {
     return this.energy == 0;
   }
-  
+
   playAnimation(images) {
     let i = this.currentImage % images.length; // let i = 7 % 6; => 1, Rest 1
     let path = images[i];
