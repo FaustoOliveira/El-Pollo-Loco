@@ -17,8 +17,11 @@ class MovableObject extends DrawableObject {
   }
 
   isAboveGround() {
+    if(this instanceof ThrowableObject){ //Throwable Object Fällt immer runter
+        return true;
+    } else {
     return this.y < 151;
-  }
+  }}
   
   // character.isColliding(chicken);
   isColliding(mo) {
@@ -42,7 +45,6 @@ class MovableObject extends DrawableObject {
   isHurt() {
     let timepassed = new Date().getTime() - this.lastHit; //Differenz in millisekunden
     timepassed = timepassed / 1000; // Differenz in Sekunden
-    console.log(timepassed);
     return timepassed < 1;
   }
 
