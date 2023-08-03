@@ -26,3 +26,23 @@ canvas {
   background-color: black;
 }
 
+.start {
+  padding: 5px 25px;
+  cursor: pointer;
+}
+.button {
+  font-size: 20px;
+  margin: 3px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  padding: 10px 50px;
+  background: rgb(255, 198, 33);
+  background: linear-gradient(180deg, rgba(255, 198, 33, 1) 0%, rgba(255, 220, 0, 1) 50%, rgba(255, 160, 0, 1) 100%);
+  border-radius: 5px;
+  border: 3px solid #ca4c1e;
+  font-size: 32px;
+  margin: 0 10px px;
+}
