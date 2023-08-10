@@ -6,8 +6,9 @@ class World {
   keyboard;
   camera_x = 0;
   statusBar = new StatusBar();
+  coinBar = new CoinBar();
   throwableObject = [];
-
+ 
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
     this.canvas = canvas;
@@ -44,6 +45,22 @@ class World {
     });
   }
 
+   /**
+     * Check the collision with character and coin
+     * play collect sound
+     * The Coin remove from the canvas, character gets 100 points and status bar gets set
+     */
+   checkCollisionCoin() {
+    this.level.coin.forEach((coins, index) => {
+        if (this.character.isColliding(coins)) {
+            this.sounds[2].play();
+            this.level.coin.splice(index, 1);
+            this.level.collectedCoins += 100;
+            this.coinBar.setCoinBar();
+        };
+    });
+}
+
   //Draw() wird immer wieder aufgerufen
   draw() {
     this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -51,10 +68,12 @@ class World {
     this.addObjectsToMap(this.level.backgroundObjects);
     this.ctx.translate(-this.camera_x, 0); //Die Kamera wird beim Zurücklaufen fixiert.
     this.addToMap(this.statusBar);
+    this.addToMap(this.coinBar);
     this.ctx.translate(this.camera_x, 0); ////Die Kamera wird beim Vorwärtslaufen fixiert.
     this.addToMap(this.character);
     this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.enemies);
+    this.addObjectsToMap(this.level.coin);
     this.addObjectsToMap(this.throwableObject);
     this.ctx.translate(-this.camera_x, 0);
 
