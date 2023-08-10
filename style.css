@@ -12,6 +12,7 @@ body {
   margin: 0;
   background-image: url("img/5_background/wueste.png");
   background-position: center;
+  background-size: cover;
   font-family: "zabras", Arial, Helvetica, sans-serif;
 }
 
