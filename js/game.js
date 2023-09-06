@@ -4,6 +4,7 @@ let ctx;
 let gameStared = true;
 let keyboard = new Keyboard();
 let startScreen = new Image();
+
 startScreen.src = "img/9_intro_outro_screens/start/startscreen_2.png";
 
 /**
