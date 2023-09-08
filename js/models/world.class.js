@@ -6,7 +6,7 @@ class World {
   keyboard;
   camera_x = 0;
   statusBar = new StatusBar();
-  
+  coinsBar = new Coinsbar();
   throwableObject = [];
  
   constructor(canvas, keyboard) {
@@ -38,7 +38,7 @@ class World {
   }
 
   checkCollisions() {
-    
+    this.checkCollectiblesCollision(this.level.coins, this.coinsBar);
     this.level.enemies.forEach((enemy) => {
       if (this.character.isColliding(enemy)) {
         this.character.hit();
@@ -58,13 +58,13 @@ class World {
     this.addObjectsToMap(this.level.backgroundObjects);
     this.ctx.translate(-this.camera_x, 0); //Die Kamera wird beim Zurücklaufen fixiert.
     this.addToMap(this.statusBar);
-    
+    this.addToMap(this.coinsBar);
     this.ctx.translate(this.camera_x, 0); ////Die Kamera wird beim Vorwärtslaufen fixiert.
     this.addToMap(this.character);
     this.addObjectsToMap(this.level.clouds);
-    
+    this.addObjectsToMap(this.level.coins);
     this.addObjectsToMap(this.level.enemies);
-    
+   
     this.addObjectsToMap(this.throwableObject);
     this.ctx.translate(-this.camera_x, 0);
 

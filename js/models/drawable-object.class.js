@@ -7,9 +7,9 @@ class DrawableObject {
   height = 150;
   width = 100;
 
-  //loadImage('img/test.png');
+  //loadImage("img/test.png");
   loadImage(path) {
-    this.img = new Image(); // this.img = document.getElementById('image') <img id="image" src>
+    this.img = new Image(); // this.img = document.getElementById("image") <img id="image" src>
     this.img.src = path;
   }
 
@@ -30,7 +30,7 @@ class DrawableObject {
 
    /**
    *
-   * @param {Arry} arr - ['img/image1.png, 'img/image2.png', ...]
+   * @param {Arry} arr - ["img/image1.png", "img/image2.png", ...]
    */
    loadImages(arr) {
     arr.forEach((path) => {

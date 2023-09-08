@@ -5,6 +5,12 @@ class MovableObject extends DrawableObject {
   acceleration = 2.5;
   energy = 100;
   lastHit = 0;
+  offset = {
+    x: 0,
+    y: 0,
+    width: 0,
+    height: 0
+};
 
   //Charakter fällt runter
   applyGravity() {
