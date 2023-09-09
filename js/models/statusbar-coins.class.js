@@ -18,7 +18,7 @@ class Coinsbar extends StatusBar{
         this.setPercentage(0);
         this.x = 50;
         this.y = 50;
-        this.height = 70;
-        this.width = 220;
+        this.height = 60;
+        this.width = 200;
     }
 }

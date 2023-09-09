@@ -8,7 +8,7 @@ class World {
   statusBar = new StatusBar();
   coinsBar = new Coinsbar();
   throwableObject = [];
- 
+
   constructor(canvas, keyboard) {
     this.ctx = canvas.getContext("2d");
     this.canvas = canvas;
@@ -32,24 +32,22 @@ class World {
 
   checkThrowObjects() {
     if (this.keyboard.D) {
-      let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
+      let bottle = new ThrowableObject(
+        this.character.x + 100,
+        this.character.y + 100
+      );
       this.throwableObject.push(bottle);
     }
   }
 
   checkCollisions() {
-    this.checkCollectiblesCollision(this.level.coins, this.coinsBar);
     this.level.enemies.forEach((enemy) => {
       if (this.character.isColliding(enemy)) {
         this.character.hit();
         this.statusBar.setPercentage(this.character.energy);
       }
     });
-
   }
-
-     
-
 
   //Draw() wird immer wieder aufgerufen
   draw() {
@@ -64,7 +62,7 @@ class World {
     this.addObjectsToMap(this.level.clouds);
     this.addObjectsToMap(this.level.coins);
     this.addObjectsToMap(this.level.enemies);
-   
+
     this.addObjectsToMap(this.throwableObject);
     this.ctx.translate(-this.camera_x, 0);
 

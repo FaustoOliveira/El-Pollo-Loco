@@ -48,6 +48,6 @@ const level1 = new level(
     new Coins(3200, 100),
     new Coins(700, 100),
     new Coins(1200, 100)
-]
+],
 
 );

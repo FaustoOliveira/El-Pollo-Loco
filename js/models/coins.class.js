@@ -1,8 +1,8 @@
 class Coins extends MovableObject {
-    height = 150;
+    height = 120;
     width = 150;
     y = 100
-    
+     
     offset = {
         x: 50,
         y: 50,
@@ -15,8 +15,8 @@ class Coins extends MovableObject {
         "img/8_coin/coin_2.png"
     ]
 
-    constructor(x,y) {
-        super().loadImages("img/8_coin/coin_1.png");
+    constructor(x,y){
+        super().loadImage(this.IMAGES[0]);
         this.loadImages(this.IMAGES);
         this.coinsAnimation();
         this.x = x;
